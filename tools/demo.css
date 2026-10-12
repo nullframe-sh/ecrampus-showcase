@@ -1,0 +1,9 @@
+.demo-banner{height:32px;padding:0 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:#18263c;color:#fff;font:12px/1.3 system-ui,sans-serif;box-sizing:border-box}
+.demo-banner span{color:#cbd5e1}
+#root{height:calc(100% - 32px)!important}
+html,body{height:100%;overflow:hidden}
+#root>.app{height:100%}
+html[data-platform=win32]{--titlebar-height:0px}
+.app-titlebar{display:none!important}
+.embedded-note[data-demo]{max-width:540px;text-align:center;padding:24px;line-height:1.6}
+@media(max-width:620px){.demo-banner{height:46px;font-size:11px}.demo-banner span{max-width:180px;text-align:right}#root{height:calc(100% - 46px)!important}}

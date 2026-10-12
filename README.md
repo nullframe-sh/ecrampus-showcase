@@ -3,6 +3,14 @@
 > **Interaktive Demo der Benutzeroberfläche von eCrampus mit fiktiven Daten.**  
 > 🔗 **[Zur Live-Demo auf GitHub Pages](https://nullframe-sh.github.io/ecrampus-showcase/)**
 
+## Aktueller Demo-Stand
+
+Diese Demo zeigt die **Vorschau auf v2.3.0**, basierend auf dem lokal committeten Entwicklungsstand `492068c1212760b70edf774e25b44741d01332a0` aus `release/2.3.0`. Sie stellt keine fertig veröffentlichte Desktop-Version dar.
+
+Die Original-Oberfläche enthält die gruppierte Navigation, die Lernzeitübersicht, den simpleclub-Einstieg unter „Lernen“ und das Lernzeitkonto. Die externen Webansichten von simpleclub und Lernzeitkonto werden im Browser durch einen erklärenden Hinweis vertreten. Alle übrigen Beispieldaten stammen aus dem fiktiven Renderer-Testbestand. Die Demo-Uhr steht auf dem 23. September 2026, passend zu diesen Beispielen.
+
+Der Export bleibt eigenständig und blockiert Netzwerkverbindungen per Content Security Policy. Die genaue Quellversion und der SHA-256-Wert des Exports stehen in `demo-version.json`.
+
 ---
 
 ## 📌 Über dieses Repository
@@ -101,3 +109,13 @@ Umschüler zum Fachinformatiker für Anwendungsentwicklung (WBS TRAINING AG)
 * Portfolio: [nullframe.sh](https://nullframe.sh)  
 * E-Mail: [phsc@nullframe.sh](mailto:phsc@nullframe.sh)  
 * Profil & Case Study: [github.com/nullframe-sh](https://github.com/nullframe-sh)
+
+## Export aktualisieren
+
+Mit dem privaten Quell-Checkout am oben genannten Commit und dessen installierten Abhängigkeiten:
+
+```sh
+node tools/build-demo.mjs /pfad/zum/privaten/checkout
+```
+
+Der Export prüft den Quell-Commit und unveränderte versionierte Dateien. Er bündelt ausschließlich die Browser-Oberfläche und fiktive Testdaten, ohne Source Maps oder den Electron-Hauptprozess. Anschließend müssen Navigation, Anmeldung, Screenshots und die Netzwerkfreiheit erneut im Browser geprüft werden.
