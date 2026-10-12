@@ -7,7 +7,7 @@
 
 ## 📌 Über dieses Repository
 
-Dieses Repository enthält das öffentlich zugängliche **Browser-Showcase** für **eCrampus**, eine Desktop-Anwendung, die während meiner Umschulung zum *Fachinformatiker für Anwendungsentwicklung* bei WBS TRAINING entstanden ist.
+Dieses Repository enthält das öffentlich zugängliche **Browser-Showcase** für **eCrampus**, eine Desktop-Anwendung, die während meiner Umschulung zum *Fachinformatiker für Anwendungsentwicklung* bei WBS TRAINING AG entstanden ist.
 
 ### ⚠️ Wichtiger Hinweis zu Daten und Anmeldung
 * **Reine Mock-Daten:** Die in der Demo gezeigten Kurse, Kalendereinträge, Nachrichten, Namen und Noten sind rein fiktiv.
@@ -97,7 +97,7 @@ Da das Showcase als vollständig in sich geschlossene Datei aufgebaut ist, sind 
 ## 📬 Kontakt
 
 **Philipp Schott**  
-Umschüler zum Fachinformatiker für Anwendungsentwicklung (WBS TRAINING)  
+Umschüler zum Fachinformatiker für Anwendungsentwicklung (WBS TRAINING AG)  
 * Portfolio: [nullframe.sh](https://nullframe.sh)  
 * E-Mail: [phsc@nullframe.sh](mailto:phsc@nullframe.sh)  
 * Profil & Case Study: [github.com/nullframe-sh](https://github.com/nullframe-sh)
