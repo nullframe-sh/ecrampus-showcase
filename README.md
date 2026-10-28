@@ -1,121 +1,80 @@
-# eCrampus – Browser Showcase
+# eCrampus · Browser-Demo
 
-> **Interaktive Demo der Benutzeroberfläche von eCrampus mit fiktiven Daten.**  
-> 🔗 **[Zur Live-Demo auf GitHub Pages](https://nullframe-sh.github.io/ecrampus-showcase/)**
+Interaktive Demo der Windows-Anwendung eCrampus in **Version 2.5.0**, ausschließlich mit erfundenen Beispieldaten.
 
-## Aktueller Demo-Stand
+**[Live-Demo öffnen](https://nullframe-sh.github.io/ecrampus-showcase/)**
 
-Diese Demo zeigt die **Vorschau auf v2.3.0**, basierend auf dem lokal committeten Entwicklungsstand `492068c1212760b70edf774e25b44741d01332a0` aus `release/2.3.0`. Sie stellt keine fertig veröffentlichte Desktop-Version dar.
+![eCrampus 2.5.0, Startseite Heute](docs/screenshots/heute-hell.png)
 
-Die Original-Oberfläche enthält die gruppierte Navigation, die Lernzeitübersicht, den simpleclub-Einstieg unter „Lernen“ und das Lernzeitkonto. Die externen Webansichten von simpleclub und Lernzeitkonto werden im Browser durch einen erklärenden Hinweis vertreten. Alle übrigen Beispieldaten stammen aus dem fiktiven Renderer-Testbestand. Die Demo-Uhr steht auf dem 23. September 2026, passend zu diesen Beispielen.
+## Was eCrampus ist
 
-Der Export bleibt eigenständig und blockiert Netzwerkverbindungen per Content Security Policy. Die genaue Quellversion und der SHA-256-Wert des Exports stehen in `demo-version.json`.
+eCrampus ist ein Desktop-Client für den Unterrichtsalltag in meiner Umschulung zum Fachinformatiker für Anwendungsentwicklung bei der WBS GRUPPE. Kursunterlagen, Berichtsheft, Prüfungsergebnisse und Posteingang der Lernplattform stehen in einer Anwendung, Neuigkeiten meldet sie von selbst. eCrampus ist mein eigenständiges Projekt und kein offizielles Angebot der WBS.
 
----
+Laut integriertem Online-Zähler nutzen 10–12 der 22 Teilnehmenden meines Kurses eCrampus aktiv (Stand Oktober 2026).
 
-## 📌 Über dieses Repository
+## Stand dieser Demo
 
-Dieses Repository enthält das öffentlich zugängliche **Browser-Showcase** für **eCrampus**, eine Desktop-Anwendung, die während meiner Umschulung zum *Fachinformatiker für Anwendungsentwicklung* bei WBS TRAINING AG entstanden ist.
+| | |
+| --- | --- |
+| Quelle | Veröffentlichte Version 2.5.0 vom 20.10.2026 (Tag `v2.5.0`, Commit `6c66214`) |
+| Oberfläche | Original-Renderer der Desktop-Anwendung (React), als eine statische HTML-Datei exportiert |
+| Daten | Erfundene Testdaten der UI-Testsuite; Demo-Datum 23.09.2026, Klasse „US_IT-99.9“ |
+| Anmeldung | Simuliert; es werden keine Zugangsdaten abgefragt oder verarbeitet |
 
-### ⚠️ Wichtiger Hinweis zu Daten und Anmeldung
-* **Reine Mock-Daten:** Die in der Demo gezeigten Kurse, Kalendereinträge, Nachrichten, Namen und Noten sind rein fiktiv.
-* **Simulierte Sitzung:** Der Button *„Bei eCampus anmelden“* startet eine lokale Demo-Sitzung. Es besteht **keine** Verbindung zum eCampus oder zu Microsoft-Diensten; es werden keinerlei echte Zugangsdaten benötigt oder verarbeitet.
-* **Abgrenzung zum Desktop-Client:** Die vollständige Desktop-Anwendung läuft auf Basis von Electron mit lokaler Systemintegration. Der Quellcode des Desktop-Clients bleibt privat; dieses Repository dient der Demonstration von UI-Design, Informationsarchitektur und Bedienkonzept im Webbrowser.
+**Grenzen:** simpleclub und das Lernzeitkonto öffnen sich in der Desktop-Anwendung in eigenen Webansichten; die Demo zeigt an dieser Stelle einen Hinweis. Downloads, Speichern und Senden sind Demo-Aktionen, beim Neuladen beginnt alles von vorn. Der Online-Zähler ist ausgeblendet, weil er in der Demo keine echten Nutzer zeigen kann.
 
----
+## Bereiche
 
-## 💡 Problemstellung & Lösung
+| Bereich | Inhalt | Bild |
+| --- | --- | --- |
+| Heute | Tagesüberblick aus bereits geladenen Daten: Unterricht, Als Nächstes, Neu, Kalender, Lernzeit | [hell](docs/screenshots/heute-hell.png) · [dunkel](docs/screenshots/heute-dunkel.png) · [375 px](docs/screenshots/heute-375.png) |
+| Kursmaterial | Kurse und Ordner, Dateitabelle, Details und Vorschau | [Bild](docs/screenshots/kursmaterial-hell.png) |
+| Lernen | Einstieg in simpleclub mit „Kursmodule hinzufügen“ | [Bild](docs/screenshots/lernen-hell.png) |
+| Prüfungen | Anstehende und absolvierte Prüfungen mit Ergebnissen | [Bild](docs/screenshots/pruefungen-hell.png) |
+| Berichtsheft | Wochen mit Stunden und Vorbefüllung; eigene Einträge bleiben unangetastet | [Bild](docs/screenshots/berichtsheft-hell.png) |
+| Posteingang | Nachrichten der Lernplattform | [Bild](docs/screenshots/posteingang-hell.png) |
+| Klasse | Mitglieder, Informationen und Feedback | [Bild](docs/screenshots/klasse-hell.png) |
+| ChatGPT | Chat der Lernplattform mit Fragevorschlägen zum aktuellen Modul | [Bild](docs/screenshots/chatgpt-hell.png) |
+| Einstellungen | Eigene Seite für Darstellung, Konto und Daten | [Bild](docs/screenshots/einstellungen-hell.png) |
 
-### Das Problem
-Im alltäglichen Unterricht fallen viele verschiedene Informationsquellen und Aufgaben an:
-* Ständiges Wechseln zwischen zahlreichen Browser-Tabs für Kursordner, Lerninhalte, Termine, Prüfungen und Nachrichten.
-* Aufwendige wöchentliche Berichtsheftführung mit wiederkehrenden Dokumentationsschritten.
-* Fehlende zentrale Übersicht über den aktuellen Tag und anstehende Fristen.
+Hilfe gibt es über F1 oder das Fragezeichen oben rechts, dazu einen geführten Rundgang.
 
-### Die Lösung: eCrampus
-Ein zentraler Desktop-Client, der die verstreuten Bereiche an einer gemeinsamen Anlaufstelle zusammenführt:
-* **Tagesübersicht („Heute“):** Zeigt den laufenden Unterrichtstag im Modul, anstehende Termine, Fristen und neue Unterrichtsmaterialien auf einen Blick.
-* **Berichtsheftführung:** Direkte Erfassung der Ausbildungstage mit Stunden- und Inhaltseingabe sowie Vorbefüllung aus Tageszusammenfassungen.
-* **Kursmaterial & Lerninhalte:** Strukturierter Einstieg in Modulunterlagen und Lernthemen ohne Tab-Chaos.
-* **Prüfungen & Benachrichtigungen:** Überblick über anstehende Modulprüfungen, Noten und wichtige Mitteilungen.
+## Datenschutz und Sicherheit
 
----
+- Ausschließlich erfundene Namen, Kurse, Nachrichten und Noten. Die Versionshinweise der App nennen im Original die echte Kursgruppe; im Export ist sie durch die Testklasse ersetzt.
+- Die Seite lädt nichts nach: Skripte, Stile, Bilder und Schriften sind eingebettet, und die Content Security Policy verbietet Netzwerkverbindungen (`connect-src 'none'`).
+- Kein Electron-Hauptprozess, keine Source Maps. Der Quellcode der Desktop-Anwendung ist nicht öffentlich.
 
-## 🛠️ Technologie-Stack
+## Prüfung
 
-* **Desktop-Anwendung:** Electron, React, TypeScript
-* **Showcase-Repository:** Statischer Web-Export der Original-Oberfläche (Single-Page HTML-Bundle mit React, CSS und eingebetteten Mock-Handlern)
+Geprüft am 28.10.2026 in Chromium: alle zehn Bereiche über die Seitenleiste, helles und dunkles Farbschema, Breiten 1440, 900 und 375 Pixel. Ergebnis: keine Konsolenfehler, keine Netzwerkanfragen, kein seitliches Überlaufen. Einzelheiten in [docs/validation-2.5.0.md](docs/validation-2.5.0.md). Quell-Commit und SHA-256 des Exports stehen in `demo-version.json`.
 
----
+## Technik
 
-## 📸 Eindrücke aus der Benutzeroberfläche
+| | |
+| --- | --- |
+| Desktop-Anwendung | Electron, React, TypeScript, electron-vite, Jest, electron-builder, electron-updater |
+| Demo | Vite-Build des Renderers mit den Mock-Daten der UI-Testsuite, eingebettet in `index.html` |
 
-### 1. Tagesübersicht („Heute“)
-Zentraler Ausgangspunkt für den Unterrichtstag mit Fortschrittsanzeige, Schnellzugriffen und Benachrichtigungen.
-![Tagesübersicht Heute](docs/screenshots/dashboard-heute.png)
+## Meine Arbeit an eCrampus
 
-### 2. Berichtsheft-Editor
-Übersichtliche Erfassung nach Wochentagen, automatische Stundenberechnung und Funktion zur Vorbefüllung.
-![Berichtsheft-Editor](docs/screenshots/berichtsheft-editor.png)
+Ich lege fest, welche Funktionen es gibt und wie sie sich bedienen, und arbeite Rückmeldungen aus dem Kurs ein. Fehler verfolge ich über Konsole, Logdateien und Entwicklerwerkzeuge bis in den Code. Den Code erstelle ich mit KI-Unterstützung und prüfe jede neue Version mit automatisierten Tests sowie einem Installations- und Upgrade-Test, bevor ich sie über meinen eigenen Update-Server veröffentliche.
 
-### 3. Kursmaterialien & Module
-Schneller Überblick über Kurse, Unterlagen und aktuelle Unterrichtsinhalte.
-![Kursmaterialien](docs/screenshots/kursmaterial.png)
+## Lokal öffnen
 
----
+`index.html` herunterladen und im Browser öffnen. Ein Webserver ist nicht nötig.
 
-## 👤 Mein Beitrag & Arbeitsweise
+## Export neu erzeugen
 
-Ich absolviere seit Mai 2026 eine Umschulung zum Fachinformatiker für Anwendungsentwicklung. Mein Beitrag zu eCrampus umfasst:
-
-* **Bedarfsanalyse:** Erkennen konkreter Reibungspunkte und organisatorischer Hürden im täglichen Unterrichtsablauf.
-* **Anforderungs- und Interface-Design:** Konzeption der Workflows, Informationsarchitektur, Navigation sowie der visuellen Gestaltung (einschließlich Light- und Dark-Mode).
-* **KI-gestützte Implementierung:** Umfangreiche Umsetzung des Codes unter gezieltem Einsatz von KI-Tools bei schrittweisem Aufbau eigener Programmierkenntnisse.
-* **Fehlersuche & Iteration:** Manuelles Testen, Lesen von Logs und Fehlermeldungen, systematisches Eingrenzen von Problemen und iterative Weiterentwicklung basierend auf praktischem Feedback aus der Kursgruppe.
-
-> **Transparenz zur Nutzung:**  
-> Nach meiner eigenen Schätzung (Stand Oktober 2026) wird eCrampus im Kurs (22 Teilnehmer) von etwa **10–12 Teilnehmern täglich** genutzt. Dies basiert auf persönlichem Feedback und Rückmeldungen im Kurs, nicht auf automatisierter Telemetrie.
-
----
-
-## 💻 Demo lokal ausführen
-
-Da das Showcase als vollständig in sich geschlossene Datei aufgebaut ist, sind keine Installationsschritte erforderlich:
-
-1. Repository klonen:
-   ```bash
-   git clone https://github.com/nullframe-sh/ecrampus-showcase.git
-   cd ecrampus-showcase
-   ```
-
-2. `index.html` direkt im Browser öffnen:
-   * **Doppelklick** auf `index.html` oder
-   * über einen lokalen Webserver ausführen (empfohlen zur Vermeidung von Browser-Restriktionen bei lokalen Dateien):
-     ```bash
-     # Mit Python 3:
-     python -m http.server 8080
-
-     # Oder mit Node.js:
-     npx serve .
-     ```
-   Anschließend `http://localhost:8080` bzw. die angezeigte URL im Browser öffnen.
-
----
-
-## 📬 Kontakt
-
-**Philipp Schott**  
-Umschüler zum Fachinformatiker für Anwendungsentwicklung (WBS TRAINING AG)  
-* Portfolio: [nullframe.sh](https://nullframe.sh)  
-* E-Mail: [phsc@nullframe.sh](mailto:phsc@nullframe.sh)  
-* Profil & Case Study: [github.com/nullframe-sh](https://github.com/nullframe-sh)
-
-## Export aktualisieren
-
-Mit dem privaten Quell-Checkout am oben genannten Commit und dessen installierten Abhängigkeiten:
+Mit einem sauberen privaten Checkout am Commit `6c66214` und installierten Abhängigkeiten:
 
 ```sh
 node tools/build-demo.mjs /pfad/zum/privaten/checkout
 ```
 
-Der Export prüft den Quell-Commit und unveränderte versionierte Dateien. Er bündelt ausschließlich die Browser-Oberfläche und fiktive Testdaten, ohne Source Maps oder den Electron-Hauptprozess. Anschließend müssen Navigation, Anmeldung, Screenshots und die Netzwerkfreiheit erneut im Browser geprüft werden.
+Danach Navigation, Screenshots und Netzwerkfreiheit erneut im Browser prüfen. Der Stand 2.3.0 bleibt über den Tag `archive/showcase-2.3.0` wiederherstellbar.
+
+## Kontakt
+
+**Philipp Schott**, Umschulung zum Fachinformatiker für Anwendungsentwicklung  
+[nullframe.sh](https://nullframe.sh) · [phsc@nullframe.sh](mailto:phsc@nullframe.sh) · [github.com/nullframe-sh](https://github.com/nullframe-sh)
