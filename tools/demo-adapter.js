@@ -1,9 +1,9 @@
 // Browser-only adjustments. The renderer itself remains the pinned original.
-try { localStorage.setItem('ecrampus.lastSeenVersion', '2.3.0'); } catch {}
+try { localStorage.setItem('ecrampus.lastSeenVersion', '2.5.0'); } catch {}
 const api = window.api;
 window.api = new Proxy(api, { get(target, name) {
-  if (name === 'getAppInfo') return async () => ({ ok: true, data: { version: '2.3.0', packaged: true, backgroundChecks: true } });
-  if (name === 'checkForUpdates') return async () => ({ ok: true, data: { status: 'up-to-date', version: '2.3.0' } });
+  if (name === 'getAppInfo') return async () => ({ ok: true, data: { version: '2.5.0', packaged: true, backgroundChecks: true } });
+  if (name === 'checkForUpdates') return async () => ({ ok: true, data: { status: 'up-to-date', version: '2.5.0' } });
   return target[name];
 } });
 // Native embedded web views cannot be exported to a browser. Explain the boundary

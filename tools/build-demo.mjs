@@ -9,10 +9,10 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const source = path.resolve(process.argv[2] || '');
 const destination = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
-const revision = '492068c1212760b70edf774e25b44741d01332a0';
+const revision = '6c6621490afdb807955afef86631f2a9db4ebe4a'; // tag v2.5.0
 const git = (...args) => execFileSync('git', ['-C', source, ...args], { encoding: 'utf8' }).trim();
 if (git('rev-parse', 'HEAD') !== revision || git('status', '--porcelain', '--untracked-files=no')) {
-  throw new Error('Expected the clean, pinned release/2.3.0 source commit ' + revision);
+  throw new Error('Expected the clean, pinned v2.5.0 source commit ' + revision);
 }
 const desktop = path.join(source, 'desktop');
 const { build } = await import(pathToFileURL(path.join(desktop, 'node_modules/vite/dist/node/index.js')));
@@ -33,15 +33,23 @@ const result = await build({
 const output = result.output;
 let js = output.find(item => item.type === 'chunk' && item.isEntry).code;
 let css = output.filter(item => item.fileName.endsWith('.css')).map(item => item.source).join('\n');
+const mime = { js: 'text/javascript', mjs: 'text/javascript', png: 'image/png', svg: 'image/svg+xml', jpg: 'image/jpeg',
+  jpeg: 'image/jpeg', webp: 'image/webp', gif: 'image/gif', woff2: 'font/woff2', woff: 'font/woff' };
 for (const item of output) {
-  if (item.type !== 'asset' || !/\.(js|mjs)$/.test(item.fileName)) continue;
-  const url = 'data:text/javascript;base64,' + Buffer.from(item.source).toString('base64');
-  js = js.replaceAll('./' + item.fileName, url).replaceAll('/' + item.fileName, url);
+  const ext = item.fileName.split('.').pop().toLowerCase();
+  if (item.type !== 'asset' || !mime[ext]) continue;
+  // Everything is inlined: the page must not fetch anything (CSP connect-src/img-src without hosts).
+  const url = `data:${mime[ext]};base64,` + Buffer.from(item.source).toString('base64');
+  js = js.replaceAll(JSON.stringify(item.fileName), JSON.stringify(url))
+    .replaceAll(JSON.stringify(path.basename(item.fileName)), JSON.stringify(url))
+    .replaceAll('./' + item.fileName, url).replaceAll('/' + item.fileName, url);
 }
 js = js.replaceAll('</script', '<\\/script');
+// The release notes name the real class; the public demo uses the fictional class of the test data instead.
+js = js.replaceAll('US_IT-86.1', 'US_IT-99.9');
 const hash = crypto.createHash('sha256').update(js).digest('base64');
 const csp = `default-src 'none'; script-src 'sha256-${hash}' data: blob:; style-src 'unsafe-inline'; img-src data: blob:; font-src data:; connect-src 'none'; frame-src blob:; worker-src data: blob:; object-src 'none'; base-uri 'none'; form-action 'none'`;
-const html = `<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>eCrampus 2.3.0 – Vorschau</title><meta name="description" content="Interaktive Vorschau auf eCrampus 2.3.0 mit erfundenen Beispieldaten."><meta http-equiv="Content-Security-Policy" content="${csp}"><style>${css}\n${fs.readFileSync(path.join(destination, 'tools/demo.css'), 'utf8')}</style></head><body><aside class="demo-banner">eCrampus 2.3.0 · Vorschau <span>Erfundene Beispieldaten · Keine echte Anmeldung</span></aside><div id="root"></div><script type="module">${js}</script></body></html>`;
+const html = `<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>eCrampus 2.5.0 · Demo</title><meta name="description" content="Interaktive Demo von eCrampus 2.5.0 mit erfundenen Beispieldaten."><meta http-equiv="Content-Security-Policy" content="${csp}"><style>${css}\n${fs.readFileSync(path.join(destination, 'tools/demo.css'), 'utf8')}</style></head><body><aside class="demo-banner">eCrampus 2.5.0 · Demo <span>Erfundene Beispieldaten · Keine echte Anmeldung · Keine Netzwerkverbindung</span></aside><div id="root"></div><script type="module">${js}</script></body></html>`;
 fs.writeFileSync(path.join(destination, 'index.html'), html);
-fs.writeFileSync(path.join(destination, 'demo-version.json'), JSON.stringify({ version: '2.3.0', status: 'preview', sourceCommit: revision, sourceBranch: 'release/2.3.0', data: 'fictional', sha256: crypto.createHash('sha256').update(html).digest('hex') }, null, 2) + '\n');
-console.log('Built preview:', html.length, 'characters, source', revision);
+fs.writeFileSync(path.join(destination, 'demo-version.json'), JSON.stringify({ version: '2.5.0', status: 'release', sourceCommit: revision, sourceTag: 'v2.5.0', data: 'fictional', sha256: crypto.createHash('sha256').update(html).digest('hex') }, null, 2) + '\n');
+console.log('Built demo:', html.length, 'characters, source', revision);

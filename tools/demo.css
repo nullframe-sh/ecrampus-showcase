@@ -7,3 +7,6 @@ html[data-platform=win32]{--titlebar-height:0px}
 .app-titlebar{display:none!important}
 .embedded-note[data-demo]{max-width:540px;text-align:center;padding:24px;line-height:1.6}
 @media(max-width:620px){.demo-banner{height:46px;font-size:11px}.demo-banner span{max-width:180px;text-align:right}#root{height:calc(100% - 46px)!important}}
+
+/* Der Online-Zähler zeigt in der Demo keine echten Nutzer; er ist deshalb ausgeblendet. */
+.presence{display:none!important}

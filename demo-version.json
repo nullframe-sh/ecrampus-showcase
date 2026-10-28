@@ -1,8 +1,8 @@
 {
-  "version": "2.3.0",
-  "status": "preview",
-  "sourceCommit": "492068c1212760b70edf774e25b44741d01332a0",
-  "sourceBranch": "release/2.3.0",
+  "version": "2.5.0",
+  "status": "release",
+  "sourceCommit": "6c6621490afdb807955afef86631f2a9db4ebe4a",
+  "sourceTag": "v2.5.0",
   "data": "fictional",
-  "sha256": "73e0c0b5bb10664c6dd4416868497cc5358ef0cf281b89018dc03cdd1cd94662"
+  "sha256": "eb3466921513238fce583e97227940ed491dafa8cd32edaf2d9ddaed8d75085c"
 }
