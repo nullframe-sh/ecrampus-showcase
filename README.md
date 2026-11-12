@@ -24,7 +24,7 @@ Laut integriertem Online-Zähler nutzen 10–12 der 22 Teilnehmenden meines Kurs
 | Oberfläche | Original-Renderer der Desktop-Anwendung (React), als eine statische HTML-Datei exportiert |
 | Daten | Erfundene Testdaten der UI-Testsuite; Demo-Datum 23.09.2026, Klasse „US_IT-99.9“ |
 | Anmeldung | Simuliert; es werden keine Zugangsdaten abgefragt oder verarbeitet |
-| Darstellung | Standardmäßig das Systemfarbschema. Hell oder Dunkel kannst du in der Demo weiterhin selbst wählen. |
+| Darstellung | Die Demo startet in Dunkel. Unter Einstellungen → Darstellung kannst du auch Hell oder System wählen. |
 
 **Grenzen:** simpleclub, das Lernzeitkonto, Outlook Web und der Technik-Chatbot nutzen in der Desktop-Anwendung eigene Webansichten. Die Demo simuliert diese Abläufe. Downloads, Speichern und Senden sind Demo-Aktionen. Beim Neuladen beginnt alles von vorn. Der Online-Zähler ist ausgeblendet. In der hellen Browserdemo haben die Bereichsüberschriften dieselbe orange Füllung wie in der dunklen Ansicht, mit einer dünnen dunkleren Kontur.
 
