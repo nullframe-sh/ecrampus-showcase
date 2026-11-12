@@ -1,5 +1,11 @@
 // Browser-only adjustments. The renderer itself remains the pinned original.
-try { localStorage.setItem('ecrampus.lastSeenVersion', '2.7.1'); } catch {}
+try {
+  localStorage.setItem('ecrampus.lastSeenVersion', '2.7.1');
+  if (!localStorage.getItem('ecrampus.demo.systemThemeDefault')) {
+    localStorage.setItem('ecrampus_theme', 'system');
+    localStorage.setItem('ecrampus.demo.systemThemeDefault', '1');
+  }
+} catch {}
 const api = window.api;
 window.api = new Proxy(api, { get(target, name) {
   if (name === 'getAppInfo') return async () => ({ ok: true, data: { version: '2.7.1', packaged: true, backgroundChecks: true } });

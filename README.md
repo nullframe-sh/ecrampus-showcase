@@ -4,7 +4,11 @@ Interaktive Browserdemo auf Basis von **eCrampus 2.7.1**, ausschließlich mit er
 
 **[Live-Demo öffnen](https://nullframe-sh.github.io/ecrampus-showcase/)**
 
-![eCrampus 2.7.1, Startseite Heute](docs/screenshots/heute-hell.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nullframe-sh/ecrampus-showcase/main/docs/screenshots/heute-dunkel.png">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/nullframe-sh/ecrampus-showcase/main/docs/screenshots/heute-hell.png">
+  <img alt="eCrampus 2.7.1, Startseite Heute" src="docs/screenshots/heute-dunkel.png">
+</picture>
 
 ## Was eCrampus ist
 
@@ -20,6 +24,7 @@ Laut integriertem Online-Zähler nutzen 10–12 der 22 Teilnehmenden meines Kurs
 | Oberfläche | Original-Renderer der Desktop-Anwendung (React), als eine statische HTML-Datei exportiert |
 | Daten | Erfundene Testdaten der UI-Testsuite; Demo-Datum 23.09.2026, Klasse „US_IT-99.9“ |
 | Anmeldung | Simuliert; es werden keine Zugangsdaten abgefragt oder verarbeitet |
+| Darstellung | Standardmäßig das Systemfarbschema. Hell oder Dunkel kannst du in der Demo weiterhin selbst wählen. |
 
 **Grenzen:** simpleclub, das Lernzeitkonto, Outlook Web und der Technik-Chatbot nutzen in der Desktop-Anwendung eigene Webansichten. Die Demo simuliert diese Abläufe. Downloads, Speichern und Senden sind Demo-Aktionen. Beim Neuladen beginnt alles von vorn. Der Online-Zähler ist ausgeblendet. In der hellen Browserdemo haben die Bereichsüberschriften dieselbe orange Füllung wie in der dunklen Ansicht, mit einer dünnen dunkleren Kontur.
 
@@ -28,14 +33,14 @@ Laut integriertem Online-Zähler nutzen 10–12 der 22 Teilnehmenden meines Kurs
 | Bereich | Inhalt | Bild |
 | --- | --- | --- |
 | Heute | Tagesüberblick aus bereits geladenen Daten: Unterricht, Als Nächstes, Neu, Kalender, Lernzeit | [hell](docs/screenshots/heute-hell.png) · [dunkel](docs/screenshots/heute-dunkel.png) · [375 px](docs/screenshots/heute-375.png) |
-| Kursmaterial | Kurse und Ordner, Dateitabelle, Details und Vorschau | [Bild](docs/screenshots/kursmaterial-hell.png) |
-| Lernen | Einstieg in simpleclub mit „Kursmodule hinzufügen“ | [Bild](docs/screenshots/lernen-hell.png) |
-| Prüfungen | Anstehende und absolvierte Prüfungen mit Ergebnissen | [Bild](docs/screenshots/pruefungen-hell.png) |
-| Berichtsheft | Wochen mit Stunden und Vorbefüllung; eigene Einträge bleiben unangetastet | [Bild](docs/screenshots/berichtsheft-hell.png) |
-| Posteingang | Nachrichten der Lernplattform | [Bild](docs/screenshots/posteingang-hell.png) |
-| Klasse | Mitglieder, Informationen und Feedback | [Bild](docs/screenshots/klasse-hell.png) |
-| ChatGPT | Chat der Lernplattform mit Fragevorschlägen zum aktuellen Modul | [Bild](docs/screenshots/chatgpt-hell.png) |
-| Einstellungen | Eigene Seite für Darstellung, Konto und Daten | [Bild](docs/screenshots/einstellungen-hell.png) |
+| Kursmaterial | Kurse und Ordner, Dateitabelle, Details und Vorschau | [dunkel](docs/screenshots/kursmaterial-dunkel.png) · [hell](docs/screenshots/kursmaterial-hell.png) |
+| Lernen | Einstieg in simpleclub mit „Kursmodule hinzufügen“ | [dunkel](docs/screenshots/lernen-dunkel.png) · [hell](docs/screenshots/lernen-hell.png) |
+| Prüfungen | Anstehende und absolvierte Prüfungen mit Ergebnissen | [dunkel](docs/screenshots/pruefungen-dunkel.png) · [hell](docs/screenshots/pruefungen-hell.png) |
+| Berichtsheft | Wochen mit Stunden und Vorbefüllung; eigene Einträge bleiben unangetastet | [dunkel](docs/screenshots/berichtsheft-dunkel.png) · [hell](docs/screenshots/berichtsheft-hell.png) |
+| Posteingang | Nachrichten der Lernplattform | [dunkel](docs/screenshots/posteingang-dunkel.png) · [hell](docs/screenshots/posteingang-hell.png) |
+| Klasse | Mitglieder, Informationen und Feedback | [dunkel](docs/screenshots/klasse-dunkel.png) · [hell](docs/screenshots/klasse-hell.png) |
+| ChatGPT | Chat der Lernplattform mit Fragevorschlägen zum aktuellen Modul | [dunkel](docs/screenshots/chatgpt-dunkel.png) · [hell](docs/screenshots/chatgpt-hell.png) |
+| Einstellungen | Eigene Seite für Darstellung, Konto und Daten | [dunkel](docs/screenshots/einstellungen-dunkel.png) · [hell](docs/screenshots/einstellungen-hell.png) |
 
 Hilfe gibt es über F1 oder das Fragezeichen oben rechts, dazu einen geführten Rundgang.
 
