@@ -9,10 +9,10 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const source = path.resolve(process.argv[2] || '');
 const destination = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
-const revision = '84ef4e887d9518764a5c1daaf0e14ef986958133'; // tag v2.7.1
+const revision = '26639ccf1c1efa9b7fdc4591282dd1c789c32454'; // Dark-only preview based on v2.7.1
 const git = (...args) => execFileSync('git', ['-C', source, ...args], { encoding: 'utf8' }).trim();
 if (git('rev-parse', 'HEAD') !== revision || git('status', '--porcelain', '--untracked-files=no')) {
-  throw new Error('Expected the clean, pinned v2.7.1 source commit ' + revision);
+  throw new Error('Expected the clean, pinned demo source commit ' + revision);
 }
 const desktop = path.join(source, 'desktop');
 const { build } = await import(pathToFileURL(path.join(desktop, 'node_modules/vite/dist/node/index.js')));
@@ -51,5 +51,5 @@ const hash = crypto.createHash('sha256').update(js).digest('base64');
 const csp = `default-src 'none'; script-src 'sha256-${hash}' data: blob:; style-src 'unsafe-inline'; img-src data: blob:; font-src data:; connect-src 'none'; frame-src blob:; worker-src data: blob:; object-src 'none'; base-uri 'none'; form-action 'none'`;
 const html = `<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>eCrampus 2.7.1 · Demo</title><meta name="description" content="Interaktive Demo von eCrampus 2.7.1 mit erfundenen Beispieldaten."><meta http-equiv="Content-Security-Policy" content="${csp}"><style>${css}\n${fs.readFileSync(path.join(destination, 'tools/demo.css'), 'utf8')}</style></head><body><aside class="demo-banner">eCrampus 2.7.1 · Demo <span>Erfundene Beispieldaten · Keine echte Anmeldung · Keine Netzwerkverbindung</span></aside><div id="root"></div><script type="module">${js}</script></body></html>`;
 fs.writeFileSync(path.join(destination, 'index.html'), html);
-fs.writeFileSync(path.join(destination, 'demo-version.json'), JSON.stringify({ version: '2.7.1', status: 'release', sourceCommit: revision, sourceTag: 'v2.7.1', data: 'fictional', sha256: crypto.createHash('sha256').update(html).digest('hex') }, null, 2) + '\n');
+fs.writeFileSync(path.join(destination, 'demo-version.json'), JSON.stringify({ version: '2.7.1', status: 'preview', sourceCommit: revision, baseTag: 'v2.7.1', data: 'fictional', sha256: crypto.createHash('sha256').update(html).digest('hex') }, null, 2) + '\n');
 console.log('Built demo:', html.length, 'characters, source', revision);

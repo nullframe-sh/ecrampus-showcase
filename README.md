@@ -4,11 +4,7 @@ Interaktive Browserdemo auf Basis von **eCrampus 2.7.1**, ausschließlich mit er
 
 **[Live-Demo öffnen](https://nullframe-sh.github.io/ecrampus-showcase/)**
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nullframe-sh/ecrampus-showcase/main/docs/screenshots/heute-dunkel.png">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/nullframe-sh/ecrampus-showcase/main/docs/screenshots/heute-hell.png">
-  <img alt="eCrampus 2.7.1, Startseite Heute" src="docs/screenshots/heute-dunkel.png">
-</picture>
+![eCrampus, Startseite Heute im dunklen Design](docs/screenshots/heute-dunkel.png)
 
 ## Was eCrampus ist
 
@@ -20,27 +16,27 @@ Laut integriertem Online-Zähler nutzen 10–12 der 22 Teilnehmenden meines Kurs
 
 | | |
 | --- | --- |
-| Quelle | Veröffentlichte Windows-Version 2.7.1 vom 12.11.2026 (Tag `v2.7.1`, Commit `84ef4e8`) |
+| Quelle | Vorschau auf Basis der Windows-Version 2.7.1 (Tag `v2.7.1`) |
 | Oberfläche | Original-Renderer der Desktop-Anwendung (React), als eine statische HTML-Datei exportiert |
 | Daten | Erfundene Testdaten der UI-Testsuite; Demo-Datum 23.09.2026, Klasse „US_IT-99.9“ |
 | Anmeldung | Simuliert; es werden keine Zugangsdaten abgefragt oder verarbeitet |
-| Darstellung | Die Demo startet in Dunkel. Unter Einstellungen → Darstellung kannst du auch Hell oder System wählen. |
+| Darstellung | Die Demo verwendet immer das dunkle Design. Unter Einstellungen → Darstellung kannst du die Schriftgröße ändern. |
 
-**Grenzen:** simpleclub, das Lernzeitkonto, Outlook Web und der Technik-Chatbot nutzen in der Desktop-Anwendung eigene Webansichten. Die Demo simuliert diese Abläufe. Downloads, Speichern und Senden sind Demo-Aktionen. Beim Neuladen beginnt alles von vorn. Der Online-Zähler ist ausgeblendet. In der hellen Browserdemo haben die Bereichsüberschriften dieselbe orange Füllung wie in der dunklen Ansicht, mit einer dünnen dunkleren Kontur.
+**Grenzen:** simpleclub, das Lernzeitkonto, Outlook Web und der Technik-Chatbot nutzen in der Desktop-Anwendung eigene Webansichten. Die Demo simuliert diese Abläufe. Downloads, Speichern und Senden sind Demo-Aktionen. Beim Neuladen beginnt alles von vorn. Der Online-Zähler ist ausgeblendet.
 
 ## Bereiche
 
 | Bereich | Inhalt | Bild |
 | --- | --- | --- |
-| Heute | Tagesüberblick aus bereits geladenen Daten: Unterricht, Als Nächstes, Neu, Kalender, Lernzeit | [hell](docs/screenshots/heute-hell.png) · [dunkel](docs/screenshots/heute-dunkel.png) · [375 px](docs/screenshots/heute-375.png) |
-| Kursmaterial | Kurse und Ordner, Dateitabelle, Details und Vorschau | [dunkel](docs/screenshots/kursmaterial-dunkel.png) · [hell](docs/screenshots/kursmaterial-hell.png) |
-| Lernen | Einstieg in simpleclub mit „Kursmodule hinzufügen“ | [dunkel](docs/screenshots/lernen-dunkel.png) · [hell](docs/screenshots/lernen-hell.png) |
-| Prüfungen | Anstehende und absolvierte Prüfungen mit Ergebnissen | [dunkel](docs/screenshots/pruefungen-dunkel.png) · [hell](docs/screenshots/pruefungen-hell.png) |
-| Berichtsheft | Wochen mit Stunden und Vorbefüllung; eigene Einträge bleiben unangetastet | [dunkel](docs/screenshots/berichtsheft-dunkel.png) · [hell](docs/screenshots/berichtsheft-hell.png) |
-| Posteingang | Nachrichten der Lernplattform | [dunkel](docs/screenshots/posteingang-dunkel.png) · [hell](docs/screenshots/posteingang-hell.png) |
-| Klasse | Mitglieder, Informationen und Feedback | [dunkel](docs/screenshots/klasse-dunkel.png) · [hell](docs/screenshots/klasse-hell.png) |
-| ChatGPT | Chat der Lernplattform mit Fragevorschlägen zum aktuellen Modul | [dunkel](docs/screenshots/chatgpt-dunkel.png) · [hell](docs/screenshots/chatgpt-hell.png) |
-| Einstellungen | Eigene Seite für Darstellung, Konto und Daten | [dunkel](docs/screenshots/einstellungen-dunkel.png) · [hell](docs/screenshots/einstellungen-hell.png) |
+| Heute | Tagesüberblick aus bereits geladenen Daten: Unterricht, Als Nächstes, Neu, Kalender, Lernzeit | [dunkel](docs/screenshots/heute-dunkel.png) · [375 px](docs/screenshots/heute-375.png) |
+| Kursmaterial | Kurse und Ordner, Dateitabelle, Details und Vorschau | [dunkel](docs/screenshots/kursmaterial-dunkel.png) |
+| Lernen | Einstieg in simpleclub mit „Kursmodule hinzufügen“ | [dunkel](docs/screenshots/lernen-dunkel.png) |
+| Prüfungen | Anstehende und absolvierte Prüfungen mit Ergebnissen | [dunkel](docs/screenshots/pruefungen-dunkel.png) |
+| Berichtsheft | Wochen mit Stunden und Vorbefüllung; eigene Einträge bleiben unangetastet | [dunkel](docs/screenshots/berichtsheft-dunkel.png) |
+| Posteingang | Nachrichten der Lernplattform | [dunkel](docs/screenshots/posteingang-dunkel.png) |
+| Klasse | Mitglieder, Informationen und Feedback | [dunkel](docs/screenshots/klasse-dunkel.png) |
+| ChatGPT | Chat der Lernplattform mit Fragevorschlägen zum aktuellen Modul | [dunkel](docs/screenshots/chatgpt-dunkel.png) |
+| Einstellungen | Eigene Seite für Darstellung, Konto und Daten | [dunkel](docs/screenshots/einstellungen-dunkel.png) |
 
 Hilfe gibt es über F1 oder das Fragezeichen oben rechts, dazu einen geführten Rundgang.
 
@@ -52,7 +48,7 @@ Hilfe gibt es über F1 oder das Fragezeichen oben rechts, dazu einen geführten 
 
 ## Prüfung
 
-Geprüft am 12.11.2026 in Chromium: die Seitenleistennavigation in beiden Farbschemata und die Startansicht bei 1440, 900 und 375 Pixeln. Einzelheiten stehen in [docs/validation-2.7.1.md](docs/validation-2.7.1.md). Quell-Commit und SHA-256 des Exports stehen in `demo-version.json`.
+Geprüft am 12.11.2026 in Chromium: das dunkle Design bei hellem und dunklem Betriebssystem, die Einstellungen und die Startansicht auf Desktop und Mobilgeräten. Einzelheiten stehen in [docs/validation-2.7.1.md](docs/validation-2.7.1.md). Quell-Commit und SHA-256 des Exports stehen in `demo-version.json`.
 
 ## Technik
 
@@ -71,7 +67,7 @@ Ich lege fest, welche Funktionen es gibt und wie sie sich bedienen, und arbeite 
 
 ## Export neu erzeugen
 
-Mit einem sauberen privaten Checkout am Commit `84ef4e8` und installierten Abhängigkeiten:
+Mit einem sauberen privaten Checkout am Commit `26639cc` und installierten Abhängigkeiten:
 
 ```sh
 node tools/build-demo.mjs /pfad/zum/privaten/checkout

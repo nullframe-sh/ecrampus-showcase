@@ -1,9 +1,8 @@
-# Browserdemo 2.7.1
+# Browserdemo auf Basis von eCrampus 2.7.1
 
-Geprüft am 12.11.2026. Die Browserdemo verwendet den Renderer des Desktop-Tags `v2.7.1` und die erfundenen Daten der UI-Testsuite.
+Geprüft am 12.11.2026 in Chromium. Die Browserdemo verwendet den aktuellen Renderer auf Basis des Desktop-Tags `v2.7.1` und die erfundenen Daten der UI-Testsuite.
 
-- Die Startansicht öffnete in Chromium bei 1440, 900 und 375 CSS-Pixeln ohne horizontalen Seitenüberlauf.
-- Die Demo startet in Dunkel, auch wenn das System Hell verwendet. Bei bestehenden Demo-Profilen wird die bisherige Auswahl einmalig auf Dunkel umgestellt. Eine danach bewusst gewählte Einstellung bleibt beim Neuladen erhalten.
-- Alle Seitenleistenbereiche waren bei 1440 Pixeln in Hell und Dunkel erreichbar. Die Bereichsüberschriften, einschließlich „Posteingang“, und die Begrüßung auf Heute verwenden in beiden Designs die Markenfarbe `#ff5a1f`. Im hellen Browserdesign ergänzt eine dünne dunkle Kontur die orange Füllung.
-- Der Export ist eine eigenständige HTML-Datei. Bei den geprüften Abläufen gab es keine zusätzlichen HTTP-Anfragen und keine JavaScript- oder CSP-Fehler. Der statische Export enthält keine Source Maps, absoluten Entwicklerpfade oder realen E-Mail-Domänen. Die SHA-256-Prüfsumme steht in `demo-version.json`.
-- Anmeldungen und externe Kontoaktionen sind simuliert. Windows-Fensterfunktionen und eingebettete native Webansichten sind Funktionen der Desktop-App.
+- Bei 1440, 900 und 375 CSS-Pixeln öffnet sich die Startansicht ohne horizontalen Überlauf. Die Demo rendert immer dunkel, auch bei hellem Betriebssystem und einer früher gespeicherten Auswahl von Hell oder System.
+- Unter Einstellungen → Darstellung steht die Schriftgröße zur Auswahl. Die Begrüßung und die Überschrift im Posteingang verwenden die Markenfarbe `#ff5a1f`.
+- Der Export besteht aus einer HTML-Datei. Bei den geprüften Abläufen gab es keine weiteren HTTP-Anfragen und keine JavaScript- oder CSP-Fehler. Die Prüfsumme und der Quell-Commit stehen in `demo-version.json`.
+- Anmeldung und externe Kontoaktionen sind simuliert. Windows-Fensterfunktionen und eingebettete native Webansichten gehören zur Desktop-App.

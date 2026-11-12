@@ -1,10 +1,6 @@
 // Browser-only adjustments. The renderer itself remains the pinned original.
 try {
   localStorage.setItem('ecrampus.lastSeenVersion', '2.7.1');
-  if (!localStorage.getItem('ecrampus.demo.darkThemeDefault')) {
-    localStorage.setItem('ecrampus_theme', 'dark');
-    localStorage.setItem('ecrampus.demo.darkThemeDefault', '1');
-  }
 } catch {}
 const api = window.api;
 window.api = new Proxy(api, { get(target, name) {
