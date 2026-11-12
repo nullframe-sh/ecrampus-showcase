@@ -1,9 +1,9 @@
 // Browser-only adjustments. The renderer itself remains the pinned original.
-try { localStorage.setItem('ecrampus.lastSeenVersion', '2.5.0'); } catch {}
+try { localStorage.setItem('ecrampus.lastSeenVersion', '2.7.1'); } catch {}
 const api = window.api;
 window.api = new Proxy(api, { get(target, name) {
-  if (name === 'getAppInfo') return async () => ({ ok: true, data: { version: '2.5.0', packaged: true, backgroundChecks: true } });
-  if (name === 'checkForUpdates') return async () => ({ ok: true, data: { status: 'up-to-date', version: '2.5.0' } });
+  if (name === 'getAppInfo') return async () => ({ ok: true, data: { version: '2.7.1', packaged: true, backgroundChecks: true } });
+  if (name === 'checkForUpdates') return async () => ({ ok: true, data: { status: 'up-to-date', version: '2.7.1' } });
   return target[name];
 } });
 // Native embedded web views cannot be exported to a browser. Explain the boundary
@@ -15,7 +15,7 @@ const decorate = () => {
     const title = document.createElement('strong');
     title.textContent = 'Diese Ansicht öffnet sich in der Desktop-App';
     const detail = document.createElement('p');
-    detail.textContent = 'simpleclub und das Lernzeitkonto nutzen dort eigene Webansichten. In dieser Demo werden keine externen Dienste geladen und keine Zugangsdaten benötigt.';
+    detail.textContent = 'Dieser Bereich nutzt in eCrampus eine eigene Webansicht. Die Browserdemo lädt keine externen Dienste und benötigt keine Zugangsdaten.';
     note.append(title, detail);
   }
 };

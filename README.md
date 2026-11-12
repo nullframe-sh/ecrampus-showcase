@@ -1,10 +1,10 @@
 # eCrampus · Browser-Demo
 
-Interaktive Demo der Windows-Anwendung eCrampus in **Version 2.5.0**, ausschließlich mit erfundenen Beispieldaten.
+Interaktive Browserdemo auf Basis von **eCrampus 2.7.1**, ausschließlich mit erfundenen Beispieldaten.
 
 **[Live-Demo öffnen](https://nullframe-sh.github.io/ecrampus-showcase/)**
 
-![eCrampus 2.5.0, Startseite Heute](docs/screenshots/heute-hell.png)
+![eCrampus 2.7.1, Startseite Heute](docs/screenshots/heute-hell.png)
 
 ## Was eCrampus ist
 
@@ -16,12 +16,12 @@ Laut integriertem Online-Zähler nutzen 10–12 der 22 Teilnehmenden meines Kurs
 
 | | |
 | --- | --- |
-| Quelle | Veröffentlichte Version 2.5.0 vom 20.10.2026 (Tag `v2.5.0`, Commit `6c66214`) |
+| Quelle | Veröffentlichte Windows-Version 2.7.1 vom 12.11.2026 (Tag `v2.7.1`, Commit `84ef4e8`) |
 | Oberfläche | Original-Renderer der Desktop-Anwendung (React), als eine statische HTML-Datei exportiert |
 | Daten | Erfundene Testdaten der UI-Testsuite; Demo-Datum 23.09.2026, Klasse „US_IT-99.9“ |
 | Anmeldung | Simuliert; es werden keine Zugangsdaten abgefragt oder verarbeitet |
 
-**Grenzen:** simpleclub und das Lernzeitkonto öffnen sich in der Desktop-Anwendung in eigenen Webansichten; die Demo zeigt an dieser Stelle einen Hinweis. Downloads, Speichern und Senden sind Demo-Aktionen, beim Neuladen beginnt alles von vorn. Der Online-Zähler ist ausgeblendet, weil er in der Demo keine echten Nutzer zeigen kann.
+**Grenzen:** simpleclub, das Lernzeitkonto, Outlook Web und der Technik-Chatbot nutzen in der Desktop-Anwendung eigene Webansichten. Die Demo simuliert diese Abläufe. Downloads, Speichern und Senden sind Demo-Aktionen. Beim Neuladen beginnt alles von vorn. Der Online-Zähler ist ausgeblendet. In der hellen Browserdemo haben die Bereichsüberschriften dieselbe orange Füllung wie in der dunklen Ansicht, mit einer dünnen dunkleren Kontur.
 
 ## Bereiche
 
@@ -47,7 +47,7 @@ Hilfe gibt es über F1 oder das Fragezeichen oben rechts, dazu einen geführten 
 
 ## Prüfung
 
-Geprüft am 28.10.2026 in Chromium: alle zehn Bereiche über die Seitenleiste, helles und dunkles Farbschema, Breiten 1440, 900 und 375 Pixel. Ergebnis: keine Konsolenfehler, keine Netzwerkanfragen, kein seitliches Überlaufen. Einzelheiten in [docs/validation-2.5.0.md](docs/validation-2.5.0.md). Quell-Commit und SHA-256 des Exports stehen in `demo-version.json`.
+Geprüft am 12.11.2026 in Chromium: die Seitenleistennavigation in beiden Farbschemata und die Startansicht bei 1440, 900 und 375 Pixeln. Einzelheiten stehen in [docs/validation-2.7.1.md](docs/validation-2.7.1.md). Quell-Commit und SHA-256 des Exports stehen in `demo-version.json`.
 
 ## Technik
 
@@ -66,7 +66,7 @@ Ich lege fest, welche Funktionen es gibt und wie sie sich bedienen, und arbeite 
 
 ## Export neu erzeugen
 
-Mit einem sauberen privaten Checkout am Commit `6c66214` und installierten Abhängigkeiten:
+Mit einem sauberen privaten Checkout am Commit `84ef4e8` und installierten Abhängigkeiten:
 
 ```sh
 node tools/build-demo.mjs /pfad/zum/privaten/checkout
