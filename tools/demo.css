@@ -11,9 +11,12 @@ html[data-platform=win32]{--titlebar-height:0px}
 /* Der Online-Zähler zeigt in der Demo keine echten Nutzer; er ist deshalb ausgeblendet. */
 .presence{display:none!important}
 
-/* Keep the brand-orange fill visible against the light workspace. */
-html[data-resolved-theme='light'] :is(.km-title-block h1.brand-page-title,.exams-page .atr-title-block h1,.report-page :is(.report-list-head,.report-head) h1,.class-page > .page-header h1,.settings-page .atr-title-block h1) {
+/* Keep the same orange fill in both schemes and add an edge on the light workspace. */
+html[data-resolved-theme='light'] {
+  --demo-title-stroke: 1.5px var(--brand-orange-text);
+}
+:is(.km-title-block h1.brand-page-title, .exams-page .atr-title-block h1, .report-page :is(.report-list-head, .report-head) h1, .class-page > .page-header h1, .settings-page .atr-title-block h1, .mail-page:not(.mail-page-outlook) > .page-header h1, .daily-greeting-salutation) {
   color: var(--brand-orange);
   paint-order: stroke fill;
-  -webkit-text-stroke: 1.5px var(--brand-orange-text);
+  -webkit-text-stroke: var(--demo-title-stroke, 0);
 }
